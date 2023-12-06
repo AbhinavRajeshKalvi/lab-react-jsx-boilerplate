@@ -1,5 +1,6 @@
 import { Component } from "react";
-import "./App.css"
+import './App.css'
+// import "./App.css" 
 import elephant from "./images/elephant.jpeg";
 
 export default class AppClass extends Component{
@@ -26,5 +27,26 @@ export default class AppClass extends Component{
     return data;
   }
 
-  // code here
+  render(){
+    let imgArray = this.imageData()
+    return(
+      <>
+        <h1 className='h1'>Kalvium Gallery</h1>
+          <div className="parent-div">
+            {/* <img src={imgArray[0].img} alt="" />
+            <img src={imgArray[0].img} alt="" />
+            <img src={imgArray[0].img} alt="" />
+            <img src={imgArray[0].img} alt="" /> */}
+            {
+              imgArray.map(elem =>{
+                return(
+
+                  <img src={elem.img}/>
+                )
+              })
+            }
+          </div>
+      </>
+    )
+  }
 }
